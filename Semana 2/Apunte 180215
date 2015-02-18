@@ -1,6 +1,19 @@
+Paradigmas de programación distribuida:
+	Paso de mensajes: Comunicación más simple  (Sockets, servicios en red)
+	CS: 
+	P2P : servidor para sincronización intermedio e Hibridas
+		Robustez: mantiene aunque falle
+
+
 Investigar:
 	RPC:
 		a Llamada a Procedimiento Remoto (RPC) (del inglés, Remote Procedure Call) es un protocolo que permite a un programa de ordenador ejecutar código en otra máquina remota sin tener que preocuparse por las comunicaciones entre ambos. El protocolo es un gran avance sobre los sockets usados hasta el momento. De esta manera el programador no tenía que estar pendiente de las comunicaciones, estando éstas encapsuladas dentro de las RPC.
+
+			Funcionamiento:
+				-El cliente envía una petición y se queda a la espera un tiempo determinado.
+				-Si no llega la respuesta dentro del tiempo de espera, continúa su ejecución.
+				-El cliente no tiene realimentación en caso de fallo (no sabe que pasó).
+
 	RMI:
 		RMI (Java Remote Method Invocation) es un mecanismo ofrecido por Java para invocar un método de manera remota. Forma parte del entorno estándar de ejecución de Java y proporciona un mecanismo simple para la comunicación de servidores en aplicaciones distribuidas basadas exclusivamente en Java. Si se requiere comunicación entre otras tecnologías debe utilizarse CORBA o SOAP en lugar de RMI.
 
@@ -27,4 +40,4 @@ Investigar:
 
 	WCF:
 
-	Windows Communication Foundation (WCF) es un marco de trabajo para la creación de aplicaciones orientadas a servicios. Con WCF, es posible enviar datos como mensajes asincrónicos de un extremo de servicio a otro. Un extremo de servicio puede formar parte de un servicio disponible continuamente hospedado por IIS, o puede ser un servicio hospedado en una aplicación. Un extremo puede ser un cliente de un servicio que solicita datos de un extremo de servicio. Los mensajes pueden ser tan simples como un caracter o una palabra que se envía como XML, o tan complejos como una secuencia de datos binarios. 
+		Windows Communication Foundation (WCF) es un marco de trabajo para la creación de aplicaciones orientadas a servicios. Con WCF, es posible enviar datos como mensajes asincrónicos de un extremo de servicio a otro. Un extremo de servicio puede formar parte de un servicio disponible continuamente hospedado por IIS, o puede ser un servicio hospedado en una aplicación. Un extremo puede ser un cliente de un servicio que solicita datos de un extremo de servicio. Los mensajes pueden ser tan simples como un caracter o una palabra que se envía como XML, o tan complejos como una secuencia de datos binarios. 
