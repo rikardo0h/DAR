@@ -1,8 +1,3 @@
-Paradigmas de programación distribuida:
-	Paso de mensajes: Comunicación más simple  (Sockets, servicios en red)
-	CS: 
-	P2P : servidor para sincronización intermedio e Hibridas
-		Robustez: mantiene aunque falle
 
 
 Investigar:
@@ -41,3 +36,38 @@ Investigar:
 	WCF:
 
 		Windows Communication Foundation (WCF) es un marco de trabajo para la creación de aplicaciones orientadas a servicios. Con WCF, es posible enviar datos como mensajes asincrónicos de un extremo de servicio a otro. Un extremo de servicio puede formar parte de un servicio disponible continuamente hospedado por IIS, o puede ser un servicio hospedado en una aplicación. Un extremo puede ser un cliente de un servicio que solicita datos de un extremo de servicio. Los mensajes pueden ser tan simples como un caracter o una palabra que se envía como XML, o tan complejos como una secuencia de datos binarios. 
+
+
+Apuntes de clase:
+
+Paradigmas de programación distribuida:
+	Paso de mensajes: Comunicación más simple  (Sockets, servicios en red)
+	CS: 
+	P2P : servidor para sincronización intermedio e Hibridas
+		Robustez: mantiene aunque falle
+
+Sistema operativo distribuido: se encuentra en diversos lugares, oculta cosas fomenta la transparencia, son más especializados.
+
+Sistema operativo de red: hardware menos acoplado, software mayor acoplado.
+
+XTreem OS: Grid del SO. http://www.xtreemos.org Viernes
+JPPF: 
+
+GNU Parallel: Ejemplo y caso practico.(romper contraseña, compilación, copiar archivos)
+
+Multiprocesador: multiprocesamiento en varios nucleos.
+
+Sistemas distribuidos:
+	basados en modelo cliente / servidor
+	apertura: agregar nuevas caracteristicas
+		contratos / interfaces*
+	escalabilidad: agregar más equipos
+	tolerancia a fallos
+
+	paralela: resolver un problema
+	distribuida: abarca varios problemas
+	Clasificación Flynn*
+
+
+
+
