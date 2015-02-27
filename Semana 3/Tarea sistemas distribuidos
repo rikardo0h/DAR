@@ -1,0 +1,33 @@
+Escribir 5 ejemplos de sistemas distribuidos y el por que se escogieron como ejemplo.
+
+1) GitHub
+• Compartir Recursos: Principal caracteristica que provee este sistema de trabajo colaborativo, sus herramientas de sincronización y actualización propisian dicha forma de trabajo.
+• Apertura o Extensibilidad : Se permite el trabajo de manera independiente, los cambios ocaciones no interfieren con el trabajo de los demas, permitiendo así que se trabaje de manera inenterrumpida.
+• Escalabilidad: Con sus limitantes, permite la coolaboración de más integrantes.
+• Tolerancia a Fallos: permite la correción o restauración de archivos o lineas de codigo/texto borradas o modificadas por error.
+• Trasparencia: Las operaciones de actualizaciones y modificaciones se dan de manera transparente, evitando que el usuario se preocupe por interferir en procesos un tanto complicados.
+
+2) Torre de control de vuelos
+• Compartir Recursos: Evidente la necesidad de compartir la información de los radares a diferentes servicios, ya sea a otras torres de control, aviones, paginas de internet o aplicaciones moviles.
+• Apertura o Extensibilidad:
+• Escalabilidad:
+• Tolerancia a Fallos: Cuestión sumamente cuidada por este tipo de sistemas dada su importancia y funcionamiento requerido en tiempo real.
+• Trasparencia: Es evidente que los procesos que realizan en este tipo de sistemas debe limitarse a las funciones necesarias, es decir, se esconden aquellos procesos que podrian llegar a dificultar la entrega oportunda e inmediata de la información.
+
+3) Moxtra
+• Compartir Recursos: Herramienta de trabajo coolaborativo mediante sincronización de información y comunicación.
+• Apertura o Extensibilidad y Escalabilidad:: Las capacidades del sistema han aumentado considerablemente sin repercutir de forma importante en las actividades del usuario. 
+• Tolerancia a Fallos: Se presentan de forma constante, sin embargo, ofrece la restauración al momento en el que nos quedamos.
+
+
+4) Editor colaborativo (Proyecto escolar)
+• Compartir Recursos: Permite el compartir codigo y compilación de manera remota a los usuarios, a nivel muy basico.
+• Escalabilidad: Se desarollo con modulos que permitian la inclusición de nuevos lenguajes de programación para seguir aumentando su uso.
+• Tolerancia a Fallos: No contempla una gran variedad de errores en cuanto a la escritura de codigo, sin embargo, los errores ggenerados por ellos al momento de compilar eran atendidos.
+• Trasparencia: Procesos escondidos para el usuario.
+
+5) Ecosistema de dispositivos (IOS y OSX)
+• Compartir Recursos: Comparte conexión a los mensajes, llamadas y servicios web entre todos los dispositivos.
+• Apertura o Extensibilidad y Escalabilidad : La adición de nuevos equipos hace mayor el ecosistema y contempla a cada uno de esos dispositivos.
+• Tolerancia a Fallos: Presente, en el caso de llamadas se puede observar al redirigir la llamada al siguiente dispositivo.
+• Trasparencia : La conexión de los dispositivos es de manera automatica que el usuario no persive la conexión entre ellos, facilitando así el uso de todos sus dispositivos a la vez.
