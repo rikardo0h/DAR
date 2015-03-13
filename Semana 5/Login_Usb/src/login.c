@@ -32,9 +32,6 @@ int main(int argc, char *argv[]) {
         int retval;
         char *user, *pass;  
 
-
-
-
             struct termios term, term_orig;
             tcgetattr(STDIN_FILENO, &term);
             term_orig = term;
@@ -42,9 +39,11 @@ int main(int argc, char *argv[]) {
             tcsetattr(STDIN_FILENO, TCSANOW, &term);
          
             char buf[1000];
+            printf("Usuario ");
             scanf("%s", buf);
             printf(" %s: ", buf);
             user = strdup(buf);
+            printf(" Contra:");
             scanf("%s", buf);
             //printf("Read: %s\n", buf);
             pass = strdup(buf);
@@ -73,14 +72,13 @@ int authenticate(char *service, char *user, char *pass) {
         int len; /* Bytes leidos del FIFO*/
         char buf[PIPE_BUF];
         mode_t mode = 0666;
-        char arreglo[8];
+        char arreglo[8]={'1','3','f','e','1','d','0','0'};
         int i=0;
         int leno=8;
         int minimo=0;
         //
         pam_handle_t *pamh = NULL;
         int retval = pam_start(service, user, &conv, &pamh);
-
         if (retval == PAM_SUCCESS) {
 
                 reply = (struct pam_response *)malloc(sizeof(struct pam_response));
@@ -89,8 +87,8 @@ int authenticate(char *service, char *user, char *pass) {
 
                 retval = pam_authenticate(pamh, 0);
 
-                        fprintf(stdout,"Coloca codigo:");
-                        scanf("%s",arreglo);
+                        //fprintf(stdout,"Coloca codigo:");
+                        //scanf("%s",arreglo);
 
 
                 if (retval == PAM_SUCCESS){
@@ -115,9 +113,10 @@ int authenticate(char *service, char *user, char *pass) {
                                         printf("________________BIENVENIDO_____________ \n");
                                         return ( retval == PAM_SUCCESS ? 0:1 );
                                 }else{
-                                        printf("Conecta USB \n");
+                                        //printf("Conecta USB \n");
                                         minimo = minimo +1;
-                                        if(minimo>1000){
+                                        if(minimo>100){
+                                                printf("Conecta tu USB para validar login \n");
                                                 return ( retval == PAM_SUCCESS ? 0:1 );
                                         }
                                 }
