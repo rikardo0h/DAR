@@ -7,7 +7,7 @@
 
 #define BUFSZ 4096 //tamaño del segmente
 
-int main(int argc, char *argc[])
+int main(int argc, char *argv[])
     {
         int shmid; //ID del segmento
         char *shmbuf; //Dirección del proceso
@@ -17,10 +17,10 @@ int main(int argc, char *argc[])
             puts("Utilización: atshm <identifier>");
             exit(EXIT_FAILURE);
         }
-        shmid = atoi(argc[1]);
-        /
+        shmid = atoi(argv[1]);
+        
         //se adjunta el segmento
-        if((shmbuf=shmat(schmid,0,0))<(char *)0){
+        if((shmbuf= (char *) shmat(shmid,0,0))<(char *)0){
             perror("shmat");
             exit(EXIT_FAILURE);
         }

@@ -14,7 +14,7 @@ int main(void)
             perror("shmget");
             exit(EXIT_FAILURE);
         }
-        printf("segmento creado %d\ n",shmid);
+        printf("segmento creado %d \n",shmid);
         system("ipcs -m");
         exit(EXIT_SUCCESS);
     }
