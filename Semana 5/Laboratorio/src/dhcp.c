@@ -65,16 +65,7 @@ int main()
     if((sockfd = socket(AF_INET,SOCK_DGRAM,0)) < 0) 
         perror("Can't create socket");
 
-    //if(setsockopt(sockfd,SOL_SOCKET,SO_REUSEADDR,&on,sizeof(on)) < 0)
-      //  printf("setsockopt"); 
-    /*if(setsockopt(  sockfd,
-                    SOL_SOCKET,
-                    SO_BROADCAST,
-                    &on,
-                    sizeof(on)
-                 ) < 0)
-        printf("setsockopt");
-/* -------------- Cliente ---------------------- */
+    /* -------------- Cliente ---------------------- */
 
 /* -------------- Servidor ---------------------- */
     //Fill struct to 0
