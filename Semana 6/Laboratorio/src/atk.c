@@ -104,13 +104,13 @@ void fillAtak(struct atak * atakmsg)
 	inet_aton("0.0.0.0", &atakmsg->siaddr);
     atakmsg->msg[0]="h";
     atakmsg->msg[1]="0";
-    atakmsg->msg[0]="l";
-    atakmsg->msg[0]="a";
+    //atakmsg->msg[0]="l";
+    //atakmsg->msg[0]="a";
   //  char *str2 = "Hola Ot";
 //	strcpy(str2, atakmsg->msg);
 
-   	atakmsg->opt[1] = 4;
-   	atakmsg->opt[2] = 255;
+   	atakmsg->opt[0] = 4;
+   	atakmsg->opt[1] = 6;
     atakmsg->temp = 4;
 }
 
