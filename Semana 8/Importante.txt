@@ -1,0 +1,43 @@
+Compilar de la siguiente manera:
+
+    g++ -std=c++11 mapport.cxx mapport
+
+ Como se usa la funcion itoi del estandar c11 se agrega el parametro -std=c++11.
+
+ Al ejecutar el compilado requiere de los siguientes parametros:
+ 	1. IP.
+ 	2. Tipo de paquete.
+
+ Ejemplos:
+ 
+ 	./mapport 192.168.1.150 TCP
+
+ 	./mapport 192.168.1.150 UDP
+
+
+ NOTA:
+
+ Version del compilador:
+ 
+ 		gcc version 4.9.2 20150204 (prerelease) (GCC)
+
+
+
+
+Para compilar la Biblioteca:
+
+	gcc -o libsnifer.o -c libsnifer.c
+
+-o  Renombra la salida de lo que se compila.
+-c  Indica que solo se compilará.
+
+Para compilar todo el proyecto agregand la nueva lib:
+
+	gcc ejemplo.c -o ejemplo libsnifer.o
+
+Solo se agrega el compilado al final.
+
+Referencias:
+
+http://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
+
