@@ -15,7 +15,11 @@ using namespace std;
 /*Compilar con la siguiente directiva:
     g++ -std=c++11 mapport.cxx mapport*/
 //#define MAX_FOO  20
-#define portno 3306
+
+int portno = 3306;
+char cadena[1000];
+int i=0;
+
 ifstream ifile ("protlist.csv");
 int isFile(){
     if(ifile.is_open()){
@@ -40,7 +44,7 @@ int readPorts(char *argv[]){
             /*Inicio_estado del puerto*/
             string::size_type sz;
             stToken++;
-            //portno = std::stoi (sAux.substr(stToken),&sz);
+            portno = stoi (sAux.substr(stToken),&sz);
             cout << portno;
             //char hostnameb[16] = "192.168.1.150";
             char *hostname = argv[1];
