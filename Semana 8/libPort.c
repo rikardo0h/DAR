@@ -17,7 +17,7 @@ using namespace std;
 //#define MAX_FOO  20
 
 int portno = 3306;
-char cadena[1000];
+string cadena,name;
 int i=0;
 
 ifstream ifile ("protlist.csv");
@@ -39,13 +39,14 @@ int readPorts(char *argv[]){
             ifile >> sAux;
             size_t stToken = sAux.find(",");
             sSokect += sAux.substr(0, stToken);
+            name=sAux.substr(0, stToken);
             sSokect += sAux.substr(stToken);
             
             /*Inicio_estado del puerto*/
             string::size_type sz;
             stToken++;
             portno = stoi (sAux.substr(stToken),&sz);
-            cout << portno;
+           // cout << portno;
             //char hostnameb[16] = "192.168.1.150";
             char *hostname = argv[1];
             /*char *hostname = hostnameb;*/
@@ -61,7 +62,7 @@ int readPorts(char *argv[]){
              protocolo adecuado para la situación). Usar SOCK_STREAM para TCP o
              SOCK_DGRAM para UDP.*/
             string sTipoSokect = argv[1];
-            cout << sTipoSokect;
+            //cout << sTipoSokect;
             if(sTipoSokect.compare("TCP"))
             {
                 sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -104,10 +105,12 @@ int readPorts(char *argv[]){
             {
                 //printf("Port is closed");
                 sSokect += "     ->    closed\n";
+                cadena += name+":"+std::to_string(portno)+":0,\n";
             } else
             {
                 //printf("Port is active");
                 sSokect += "     ->    active\n";
+                cadena +=  name+":"+std::to_string(portno)+":1,\n";
             }
             close(sockfd);
             /*Fin_estado del puerto*/
@@ -115,12 +118,10 @@ int readPorts(char *argv[]){
 
         
         ////
-        
     }else{
         printf("Error abriendo..\n");
         return 0;
     }
     ifile.close();
-    cout << sSokect << endl;
-
+    cout << "Resultadoooooooooo \n "<<cadena<<"  "<<name;
 }
