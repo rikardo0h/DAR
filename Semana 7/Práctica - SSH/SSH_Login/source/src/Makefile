@@ -10,9 +10,9 @@ INCLUDES =
 #Usar gcc
 GCC = gcc 
 #Bibliotecas
-LIBS = -lm -lpthread 
+LIBS = -lm -lpthread
 #FLAGS =  -std=c99
-CFLAGS =  -Wdeprecated-declarations -I /usr/include/libssh/ -I .
+CFLAGS =  -Wdeprecated-declarations -I /opt/local/include/libssh -I  .
 
 
 #'make all' creará todos los ejecutables

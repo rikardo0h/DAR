@@ -1,11 +1,11 @@
 #ifdef _WIN32
-#include <libssh/libssh.h> 
+#include <libssh.h>
 #include <winsock2.h>
 #pragma comment(lib,"ws2_32.lib")
 #else
 #include <netinet/in.h>
 #include <sys/socket.h>
-#include <libssh/libssh.h>
+#include <libssh.h>
 #endif
 
 #include <stdio.h>
