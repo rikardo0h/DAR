@@ -8,18 +8,11 @@ namespace PruebaDAR
 {
     class ATK
     {
-        private byte type;
-        private byte count;
-        private byte ack;
-        private byte[] msg;
+        private byte type = new byte();
+        private byte count = new byte();
+        private byte ack = new byte();
+        private byte[] msg = new byte[100];
 
-        public ATK()
-        {
-            type = new byte();
-            count = new byte();
-            ack = new byte();
-            msg = new byte[100];
-        }
 
         public void setType(byte type)
         {
@@ -53,7 +46,11 @@ namespace PruebaDAR
 
         public void setMSG(String msg)
         {
-            this.msg = Encoding.ASCII.GetBytes(msg);       
+            byte [] bTemp = Encoding.ASCII.GetBytes(msg);
+            for (int i = 0; i < bTemp.Length; i++)
+            {
+                this.msg[i] = bTemp[i];
+            }
         }
 
         public byte [] getMSG()
@@ -68,11 +65,22 @@ namespace PruebaDAR
             arrayATK[0] = this.type;
             arrayATK[1] = this.count;
             arrayATK[2] = this.ack;
-            for (int i = 0; i < this.msg.Length; i++)
+            for (int i = 0; i < 100; i++)
             {                
                 arrayATK[i+3] = this.msg[i];                
             }
             return arrayATK;
+        }
+
+        public void ArrayToObjetc(byte [] arr)
+        {
+            this.type = arr[0];
+            this.count = arr[1];
+            this.ack = arr[2];
+            for (int i = 0; i < this.msg.Length; i++)
+            {
+                this.msg[i] = arr[i + 3];
+            }
         }
     }
 }

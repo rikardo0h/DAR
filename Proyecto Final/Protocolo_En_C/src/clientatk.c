@@ -137,7 +137,6 @@ int main(int argc, char * argv[])
 							int j = 0;
 							while(j < i)
 							{			
-								usleep(1);
 								//printf("Mensaje %i: %s\n", j,arregloatk[j]->msg);		
 								struct atak msgAtak;
 								memcpy(&msgAtak, arregloatk[j], (int) 103);
@@ -276,10 +275,10 @@ int main(int argc, char * argv[])
 					cond = false;
 					continue;
 			}
-	    }
-	    close(sockfd);
+	    }	    
 		usleep(5000000);
 	}
+	close(sockfd);
 	return 0;	
 }
 
@@ -298,7 +297,7 @@ char * GET()
 	int socket_desc;
 	struct sockaddr_in servget;
 	char * message;
-	char * servreq = malloc(2000);
+	char * servreq = malloc(8000);
 
 	//create socket
 	socket_desc = socket(AF_INET, SOCK_STREAM, 0);
@@ -313,20 +312,26 @@ char * GET()
 
 	if (connect(socket_desc,(struct sockaddr *) &servget,sizeof(servget)) < 0) 
     {
-        perror("ERROR connecting");
-        exit;
+        perror("GET ERROR connecting");
+        strcpy(servreq, "GET ERROR connecting");
+        return servreq;
+        //exit(1);
     }
 
     message = "GET / HTTP/1.1\r\n\r\n";
 
     if(send(socket_desc, message, strlen(message), 0) < 0)
     {
-    	perror("ERROR sending");        
+    	perror("GET ERROR sending");        
+    	strcpy(servreq, "GET ERROR sending");
+        return servreq;
     }
 
-    if(recv(socket_desc, servreq, 2000, 0) < 0)
+    if(recv(socket_desc, servreq, 8000, 0) < 0)
     {
-    	perror("Recv Failed");
+    	perror("GET Recv Failed");
+    	strcpy(servreq, "GET Recv Failed");
+        return servreq;
     }
 
     //puts(servreq);
@@ -363,7 +368,7 @@ struct atak ** partirMensaje(char * msj, int tipo, int * tamArreglo)
 
 char * SCANIPS()
 {	
-	int n = scanIPS(100);
+	int n = scanIPS(20);
 	if (n == 0)
 	{
 		FILE * fTemp = fopen("log.txt", "r");

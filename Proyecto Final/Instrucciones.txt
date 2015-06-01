@@ -1,0 +1,21 @@
+Para compilar situarce dentro del directorio "DAR-FEI/Proyecto_Final/Protocolo_En_C/src/", luego ejecutar el comando "make lib" para compilar la librería libscan.c y despues ejecutar make all para compilar todos los archivos.
+
+Para ejecutar, estando en el directirio "DAR-FEI/Proyecto_Final/Protocolo_En_C/src/", ejecutar:
+
+Para el servidor atk:
+
+./../bin/atk.o numPuertoServidor numeroPuertoClienteWebóMovil
+
+Ejemplo:
+
+./../bin/atk 8081 10000
+
+Para el clienteatk:
+
+./../bin/clientatk.o IPdelServidor numeroPuertoServidor
+
+Ejemplo:
+
+sudo ./../bin/clientatk localhost 10000 
+
+Este ultimo debe ser ejecutado en modo administrador por el escaner de IP's.

@@ -128,8 +128,7 @@ void ProcessPacket(unsigned char* buffer, int size)
     struct iphdr *iph = (struct iphdr*)(buffer + 
                             sizeof(struct ethhdr));
     /*Aumenta el numero de paquetes procesados*/
-    ++total;
-    fprintf(logfile , "%i;", total);    
+    ++total;        
     /*Revisa el protocolo, aumentando su contador segun sea el tipo de protocolo, y
     se imprimen los contadores*/
     /*Apunta a la estructura en protocolo*/
@@ -137,6 +136,7 @@ void ProcessPacket(unsigned char* buffer, int size)
     {
         case 1:  //ICMP Protocol
             ++icmp;
+            fprintf(logfile , "%i;", total);
             print_icmp_packet( buffer , size);
             break;
          
@@ -146,11 +146,13 @@ void ProcessPacket(unsigned char* buffer, int size)
          
         case 6:  //TCP Protocol
             ++tcp;
+            fprintf(logfile , "%i;", total);
             print_tcp_packet(buffer , size);
             break;
          
         case 17: //UDP Protocol
             ++udp;
+            fprintf(logfile , "%i;", total);
             print_udp_packet(buffer , size);
             break;
          
