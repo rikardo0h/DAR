@@ -1,0 +1,6 @@
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\bin\Debug\PruebaDAR.exe.config
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\bin\Debug\PruebaDAR.exe
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\bin\Debug\PruebaDAR.pdb
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\obj\Debug\PruebaDAR.exe
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\obj\Debug\PruebaDAR.pdb
+C:\Users\Alfonso\documents\visual studio 2012\Projects\PruebaDAR\PruebaDAR\obj\Debug\PruebaDAR.csprojResolveAssemblyReference.cache
